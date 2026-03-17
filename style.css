@@ -1,0 +1,386 @@
+
+:root {
+    --bg-paper: #e6ccb2; /* Цвет бумажного фона */
+    --accent-green: #6b705c; /* Оливковый как на логотипе */
+    --text-dark: #3d3a35; /* Глубокий коричневый вместо синего */
+    --white: #ede0d4;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lora', serif;
+    background-color: var(--bg-paper); /* Убираем синеву снизу */
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ШАПКА (HERO) */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.ghibli-bg-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Мягкое затемнение, чтобы текст не сливался */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(230, 204, 178, 1));
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    color: var(--text-dark);
+    text-shadow: 0 2px 10px rgba(255,255,255,0.5); /* Тень для читаемости */
+}
+
+h1 {
+    font-size: 5rem;
+    margin: 0;
+    color: var(--accent-green);
+    letter-spacing: 5px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* КНОПКА */
+.btn-organic {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    background-color: var(--accent-green);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-organic:hover {
+    transform: translateY(-3px);
+    background-color: #585d4a;
+}
+
+/* КАРТОЧКИ МЕНЮ */
+.main-nav {
+    padding: 100px 0;
+    background-color: var(--bg-paper);
+}
+
+.main-nav .container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.nav-card {
+    flex: 1;
+    height: 400px;
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: 0.4s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.card-image {
+    height: 60%;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-text {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-text h3 {
+    margin: 0 0 10px;
+    font-size: 1.4rem;
+    color: var(--accent-green);
+}
+
+/* СТИЛІ ДЛЯ СПИСКУ ФІЛЬМІВ */
+.timeline-container {
+    margin-top: 50px;
+    border-top: 1px solid var(--text-dark);
+}
+
+.timeline-item {
+    display: flex;
+    padding: 20px 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.timeline-item:hover {
+    background: rgba(0,0,0,0.05);
+    padding-left: 20px;
+}
+
+.timeline-item .year {
+    width: 80px;
+    font-weight: bold;
+    color: var(--accent-green);
+}
+
+/* СТИЛІ ДЛЯ СТОРІНКИ АНІМЕ */
+.movie-detail-body {
+    color: white;
+}
+
+.movie-hero {
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+.movie-main-info {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 40px;
+    margin-top: -100px; /* Наїзд на картинку зверху */
+    position: relative;
+    z-index: 5;
+}
+
+.mini-poster {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.movie-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 50px 0;
+}
+
+.movie-gallery img {
+    width: 100%;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.quote-block {
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 60px 0;
+    opacity: 0.8;
+}
+
+.btn-back {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+}
+
+.timeline-item.popular {
+    background: rgba(230, 204, 178, 0.2); /* Легкий бежевий відтінок */
+    border-left: 4px solid var(--accent-green);
+}
+
+.rank {
+    width: 50px;
+    font-weight: bold;
+    color: var(--accent-green);
+    font-family: serif;
+}
+
+/* СТИЛИ ДЛЯ СТРАНИЦ ФИЛЬМОВ */
+.movie-detail-body {
+    color: #ede0d4; /* Светлый текст для темных фонов */
+}
+
+.movie-hero {
+    height: 60vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Плавное исчезновение картинки вниз */
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+.movie-main-info {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    margin-top: -150px; /* Тот самый наезд на картинку */
+    position: relative;
+    z-index: 10;
+}
+
+.mini-poster {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.text-side h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.text-side .meta {
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.movie-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 60px 0;
+}
+
+.movie-gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.movie-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.audio-player-mini {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 20;
+    opacity: 0.7;
+}
+
+
+
+.time-display {
+    color: rgba(255, 255, 255, 0.8); /* Трохи прозорий білий текст */
+    font-size: 0.9rem;
+    font-family: serif; /* Шрифт з засічками, як у Studio Ghibli */
+}
+
+/* СЕКЦИЯ "ПРО ПРОЕКТ" (ТЕЛО) */
+.about-section {
+    padding: 80px 0;
+    background-color: #dbc2a9; /* Чуть темнее бежевого для контраста */
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.about-quote {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--accent-green);
+    border-left: 5px solid var(--accent-green);
+    padding-left: 30px;
+}
+
+
+.audio-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+audio {
+    width: 250px;
+    height: 35px;
+    border-radius: 50px;
+    opacity: 0.7; /* Робимо його м'якшим для очей */
+    filter: sepia(30%) contrast(90%); /* Додаємо легкий ретро-відтінок */
+    transition: 0.3s;
+}
+
+audio:hover {
+    opacity: 1; /* Проявляється при наведенні */
+}
+ 
+
+/* ФУТЕР */
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: var(--text-dark);
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+/* АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНА */
+@media (max-width: 768px) {
+    h1 { font-size: 3rem; }
+    .main-nav .container { flex-direction: column; }
+    .about-grid { grid-template-columns: 1fr; }
+    .nav-card { height: 350px; }
+}
