@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghibli Encyclopedia</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #121212; 
+            color: #e0e0e0;
+            font-family: 'Georgia', serif; 
+        }
+
+        .wrapper {
+            max-width: 1200px; 
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #e9c46a;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            border-bottom: 2px solid #e9c46a;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* ТРИ ВЕЛИКІ ФОТО В РЯД */
+        .newspaper-gallery {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .newspaper-gallery img {
+            flex: 1; /* Змушує їх ділити простір порівну */
+            height: 250px; 
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* БЛОК ЗА МАКЕТОМ: ФОТО ЗЛІВА, ТЕКСТ СПРАВА */
+        .article-section {
+            display: flex;
+            align-items: center; /* Центруємо по вертикалі */
+            gap: 40px;
+            padding: 20px;
+            border-top: 1px solid rgba(233, 196, 106, 0.3);
+        }
+
+        /* Фото зліва (сектор 4 на макеті) */
+        .article-photo {
+            flex-shrink: 0;
+        }
+
+        .round-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 5px solid #e9c46a;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(233, 196, 106, 0.2);
+        }
+
+        /* Текст справа */
+        .article-text {
+            flex-grow: 1;
+            text-align: justify;
+        }
+
+        .article-text h2 {
+            color: #e9c46a;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .article-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* МОБІЛЬНА ВЕРСІЯ */
+        @media (max-width: 800px) {
+            .newspaper-gallery {
+                flex-direction: column;
+            }
+            .newspaper-gallery img {
+                height: 180px;
+            }
+            .article-section {
+                flex-direction: column; /* На телефоні стають один під одного */
+                text-align: center;
+            }
+        }
+
+        .footer-link {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            color: #e9c46a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <h1>Ghibli Museum Gazette</h1>
+
+        <div class="newspaper-gallery">
+            <img src="../images/mus1.jpg" alt="Hall">
+            <img src="../images/mus2.jpg" alt="Robot">
+            <img src="../images/mus3.jpg" alt="Cinema">
+        </div>
+
+        <div class="article-section">
+            
+            <div class="article-photo">
+                <img src="../images/logo.png" alt="Totoro" class="round-image">
+            </div>
+
+            <div class="article-text">
+                <h2>Дім, де оживає кожна лінія</h2>
+                <p>
+                    Офіційний сайт музею Ghibli каже: «Давайте загубимося разом». 
+                    Тут немає вказівників, бо Хаяо Міядзакі хотів, щоб ви самі 
+                    досліджували цей простір, наче діти. Кожна ручка дверей, 
+                    кожен вітраж — це маленька історія.
+                </p>
+                <p>
+                    Особливої уваги заслуговує виставка «Де народжується фільм». 
+                    Це кімната, заповнена ескізами, книгами та олівцями, яка 
+                    показує шлях від ідеї в голові до малюнка на папері.
+                </p>
+                <p>
+                    А на даху вас чекає самотній робот-солдат із Лапути, 
+                    що став символом музею та охоронцем його таємниць.
+                </p>
+            </div>
+
+        </div>
+
+        <a href="index.html" class="footer-link">← НА ГОЛОВНУ</a>
+    </div>
+
+</body>
+</html>
