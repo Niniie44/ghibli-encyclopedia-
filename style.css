@@ -367,46 +367,7 @@ audio:hover {
     opacity: 1; /* Проявляється при наведенні */
 }
  
-/* Контейнер, який не дає контенту вилазити за межі */
-.anime-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-}
 
-/* Флекс-бокс для розміщення в ряд */
-.anime-header {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-}
-
-/* Стиль для постера */
-.anime-poster img {
-    width: 300px; /* Фіксована ширина для ПК */
-    max-width: 100%; /* Але не більше ширини екрана */
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-}
-
-.anime-info {
-    flex: 1; /* Текст займає весь вільний простір */
-}
-
-/* ГОЛОВНЕ: Правила для телефонів */
-@media (max-width: 768px) {
-    .anime-header {
-        flex-direction: column; /* Ставимо елементи стовпчиком */
-        align-items: center;    /* Центруємо картинку та текст */
-        text-align: center;
-    }
-
-    .anime-poster img {
-        width: 80%; /* На телефоні постер стає трохи меншим за ширину екрана */
-        margin-bottom: 20px;
-    }
-}
 /* ФУТЕР */
 footer {
     text-align: center;
